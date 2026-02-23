@@ -1,0 +1,25 @@
+title: Joe Shirey's Blog
+email: your-email@example.com
+description: >-
+  A modern blog exploring technology, design, and everything in between.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://joeshirey.github.io" # the base hostname & protocol for your site
+twitter_username: joeshirey
+github_username:  joeshirey
+
+# Build settings
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+
+# Custom settings
+markdown: kramdown
+highlighter: rouge
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
