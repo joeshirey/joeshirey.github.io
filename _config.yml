@@ -8,7 +8,7 @@ twitter_username: joeshirey
 github_username:  joeshirey
 
 # Build settings
-theme: jekyll-theme-minimal
+# theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 
