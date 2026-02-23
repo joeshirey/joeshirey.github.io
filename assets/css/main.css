@@ -149,6 +149,18 @@ header nav {
     text-decoration: none;
 }
 
+.post-entry .post-info {
+    flex-grow: 1;
+}
+
+.post-entry .excerpt {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+    line-height: 1.5;
+    max-width: 600px;
+}
+
 .post-entry .date {
     font-size: 0.85rem;
     color: var(--text-secondary);
@@ -182,6 +194,16 @@ header nav {
 
 .post-content p {
     margin-bottom: 1.75rem;
+}
+
+.post-content ul,
+.post-content ol {
+    margin-bottom: 1.75rem;
+    padding-left: 1.25rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
 }
 
 .post-content h2 {
