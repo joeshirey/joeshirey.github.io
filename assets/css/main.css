@@ -222,7 +222,7 @@ footer {
     border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
     font-size: 0.85rem;
-    text-align: left;
+    text-align: center;
 }
 
 footer .disclaimer {
