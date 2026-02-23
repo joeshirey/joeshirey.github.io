@@ -13,6 +13,7 @@ plugins:
   - jekyll-feed
 
 # Custom settings
+google_analytics: G-FP2RTDC8RQ
 markdown: kramdown
 highlighter: rouge
 exclude:
