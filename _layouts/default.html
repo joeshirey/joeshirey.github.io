@@ -7,20 +7,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title | default: site.title }}</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/main.css?v=' | append: site.github.build_revision | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   {% if jekyll.environment == 'production' and site.google_analytics %}
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-      gtag('config', '{{ site.google_analytics }}');
-    </script>
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
   {% endif %}
   {% seo %}
+  <script>
+    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
 </head>
 
 <body>
@@ -32,6 +43,8 @@
           <a href="{{ '/' | relative_url }}" title="Home"><i class="fa-solid fa-house"></i></a>
           <a href="https://github.com/{{ site.github_username }}" title="GitHub"><i class="fa-brands fa-github"></i></a>
           <a href="https://www.linkedin.com/in/jshirey/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" id="theme-toggle" title="Toggle Dark Mode" style="margin-left: 1rem;"><i
+              class="fa-solid fa-moon"></i></a>
         </div>
       </nav>
     </div>
@@ -43,12 +56,42 @@
 
   <footer>
     <div class="container">
+      <div class="footer-links">
+        <a href="{{ '/feed.xml' | relative_url }}" title="Subscribe via RSS"><i class="fa-solid fa-rss"></i> Subscribe
+          to RSS</a>
+      </div>
+      <p>&copy; {{ "now" | date: "%Y" }} Joe Shirey</p>
       <p class="disclaimer">The opinions expressed here are my own and do not necessarily represent those of my
         employer.</p>
-      <br>
-      <p>&copy; {{ "now" | date: "%Y" }} Joe Shirey</p>
     </div>
   </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const icon = themeToggle.querySelector('i');
+
+    // Set initial icon
+    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    }
+
+    themeToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      let theme = document.documentElement.getAttribute('data-theme');
+      if (theme === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
+    });
+  </script>
 </body>
 
 </html>
