@@ -56,9 +56,10 @@
 
   <footer>
     <div class="container">
-      <div class="footer-links">
-        <a href="{{ '/feed.xml' | relative_url }}" title="Subscribe via RSS"><i class="fa-solid fa-rss"></i> Subscribe
-          to RSS</a>
+      <div class="footer-social">
+        <a href="https://github.com/{{ site.github_username }}" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/jshirey/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="{{ '/feed.xml' | relative_url }}" title="RSS Feed"><i class="fa-solid fa-rss"></i></a>
       </div>
       <p>&copy; {{ "now" | date: "%Y" }} Joe Shirey</p>
       <p class="disclaimer">The opinions expressed here are my own and do not necessarily represent those of my

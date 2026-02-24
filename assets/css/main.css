@@ -95,19 +95,75 @@ header nav {
     color: white !important;
 }
 
-.nav-links {
-    display: flex;
-    gap: 1.25rem;
-    align-items: center;
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 1.25rem; /* 20px - minimum requirement */
+    }
+
+    header nav {
+        gap: 0.5rem;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+        flex-shrink: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .nav-links {
+        gap: 0;
+    }
+
+    .post-entry {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.25rem;
+    }
+
+    .post-meta {
+        margin-left: 0;
+        margin-top: 1rem;
+        align-items: flex-start;
+        width: 100%;
+        border-top: 1px solid var(--border-color);
+        padding-top: 0.75rem;
+    }
+
+    .tags {
+        justify-content: flex-start;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+#theme-toggle {
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .nav-links a {
-    font-size: 1.2rem;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
+}
+
+@media (min-width: 601px) {
+    .nav-links {
+        gap: 1.25rem;
+    }
+    
+    .nav-links a {
+        font-size: 1.2rem;
+    }
 }
 
 .nav-links a:hover {
@@ -299,17 +355,25 @@ footer .disclaimer {
     font-size: 0.75rem;
     opacity: 0.8;
 }
-footer .footer-links {
+footer .footer-social {
     margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
-footer .footer-links a {
+footer .footer-social a {
     color: var(--text-secondary);
-    font-weight: 500;
-    transition: color 0.2s ease;
+    font-size: 1.5rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
 }
 
-footer .footer-links a:hover {
+footer .footer-social a:hover {
     color: var(--primary-color);
-    text-decoration: none;
+    transform: translateY(-2px);
 }
