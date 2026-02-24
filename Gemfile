@@ -14,7 +14,9 @@ if RUBY_VERSION >= "3.2"
   end
 end
 
-gem "github-pages", group: :jekyll_plugins
+gem "jekyll"
+gem "jekyll-feed"
+gem "jekyll-seo-tag"
 gem "csv"
 gem "webrick"
 gem "bigdecimal"

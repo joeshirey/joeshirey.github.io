@@ -11,6 +11,7 @@ github_username:  joeshirey
 # theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 # Custom settings
 google_analytics: G-FP2RTDC8RQ
