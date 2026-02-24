@@ -13,9 +13,19 @@ title: Joe Shirey | Writing
                     <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
                     {% if post.excerpt %}
                         <p class="excerpt">{{ post.excerpt | strip_html }}</p>
+                        <a href="{{ post.url | relative_url }}" class="read-more">Read More &rarr;</a>
                     {% endif %}
                 </div>
-                <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
+                <div class="post-meta">
+                    <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
+                    {% if post.tags.size > 0 %}
+                        <div class="tags">
+                            {% for tag in post.tags %}
+                                <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
             </div>
         {% endfor %}
     </div>
