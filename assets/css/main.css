@@ -191,6 +191,7 @@ header nav {
     margin-left: auto;
     gap: 0.75rem;
     flex-shrink: 0;
+    max-width: 150px;
 }
 
 .post-entry .date {
@@ -359,4 +360,42 @@ footer .footer-social a:hover {
     .hero h1 {
         font-size: 2rem;
     }
+}
+
+/* Pagination Styling */
+.pagination {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+}
+
+.pagination a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+.pagination a:hover {
+    background: var(--bg-hover);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.pagination .disabled {
+    color: var(--text-muted);
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    cursor: not-allowed;
+}
+
+.pagination .page_number {
+    color: var(--text-muted);
+    font-weight: 500;
 }

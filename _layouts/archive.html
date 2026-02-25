@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<section class="container">
+  <div class="archive-header">
+    <h1>
+      {% if page.type == 'category' %}
+      Category: {{ page.title }}
+      {% elsif page.type == 'tag' %}
+      Tag: {{ page.title }}
+      {% elsif page.type == 'year' %}
+      Year: {{ page.title }}
+      {% elsif page.type == 'month' %}
+      Month: {{ page.title }}
+      {% else %}
+      Archive: {{ page.title }}
+      {% endif %}
+    </h1>
+  </div>
+
+  <div class="posts-list">
+    {% for post in page.posts %}
+    <div class="post-entry">
+      <div class="post-info">
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        {% if post.excerpt %}
+        <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        <a href="{{ post.url | relative_url }}" class="read-more">Read More &rarr;</a>
+        {% endif %}
+      </div>
+      <div class="post-meta">
+        <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
+        {% if post.tags.size > 0 %}
+        <div class="tags">
+          {% for tag in post.tags %}
+          {% assign tag_slug = tag | slugify %}
+          <a href="{{ '/tag/' | append: tag_slug | append: '/' | relative_url }}" class="tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

@@ -2,7 +2,8 @@
 layout: post
 title: "Managing Vertex AI Agent Engine Endpoints with GitHub Actions"
 date: 2026-02-25
-excerpt: "Deploying and managing endpoints in Vertex AI Agent Engine requires a coordinated sequence of authentication, resource provisioning, and configuration updates. While the Agent Engine Starter Pack provides a comprehensive, opinionated framework for this, there are many scenarios where a lightweight, GitHub-native approach is more practical for rapid development."
+excerpt: "Getting your agents from a local development environment into a live, scalable endpoint in Google Cloud should be a transparent process. To help with this, I’ve put together a sample repository to show this. This repo provides a functional blueprint for standing up a CI/CD pipeline using a pure GitHub Actions approach. You can see the exact gcloud commands being executed, providing a transparent view of the deployment that increases developer velocity and makes troubleshooting straightforward."
+tags: ["Agent Engine", "GitHub Actions", "CI", "CD", "ADK"]
 ---
 
 ![Header Image](/assets/images/2026-02-24-implementing-cicd-for-vertex-ai-agent-engine-with-github-actions.png)

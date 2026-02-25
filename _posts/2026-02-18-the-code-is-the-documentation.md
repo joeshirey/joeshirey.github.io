@@ -3,6 +3,7 @@ layout: post
 title: "The Code is the Documentation"
 date: 2026-02-18
 excerpt: "Documentation rot slows down every team. Discover how to eliminate this friction by leveraging AI workflows to automate the descriptive overhead of technical documentation, keeping your docs as current as your code."
+tags: ["gemini-cli", "Antigravity", "CI"]
 ---
 
 ![Hero Image](/assets/images/code-documentation-hero.jpg)

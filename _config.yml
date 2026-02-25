@@ -12,6 +12,12 @@ github_username:  joeshirey
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate-v2
+  - jekyll-redirect-from
+  - jemoji
+  - jekyll-archives
+  - jekyll-gist
 
 # Custom settings
 google_analytics: G-FP2RTDC8RQ
@@ -25,3 +31,20 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+# Plugin Configurations
+pagination:
+  enabled: true
+  per_page: 10
+  permalink: '/page/:num/'
+  sort_field: 'date'
+  sort_reverse: true
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: 'archive'
+  permalinks:
+    category: '/category/:name/'
+    tag: '/tag/:name/'

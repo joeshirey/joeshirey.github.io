@@ -3,6 +3,7 @@ layout: post
 title: "The Commit Workflow: Defensive Engineering with AI"
 date: 2026-02-24
 excerpt: "A few weeks ago, I wrote about why the code is the documentation. It is a great North Star, but in the early days of a project, clean code usually loses the battle against moving fast."
+tags: ["gemini-cli", "Antigravity", "CI"]
 ---
 
 ![Commit Workflow Header](/assets/images/commit-workflow-hero.png)
