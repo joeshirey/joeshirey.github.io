@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Managing Vertex AI Agent Engine with GitHub Actions"
+title: "Managing Vertex AI Agent Engine Endpoints with GitHub Actions"
 date: 2026-02-25
 excerpt: "Deploying and managing endpoints in Vertex AI Agent Engine requires a coordinated sequence of authentication, resource provisioning, and configuration updates. While the Agent Engine Starter Pack provides a comprehensive, opinionated framework for this, there are many scenarios where a lightweight, GitHub-native approach is more practical for rapid development."
 ---

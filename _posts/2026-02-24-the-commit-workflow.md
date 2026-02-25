@@ -7,7 +7,7 @@ excerpt: "A few weeks ago, I wrote about why the code is the documentation. It i
 
 ![Commit Workflow Header](/assets/images/commit-workflow-hero.png)
 
-Recently, I wrote about why [the code is the documentation](https://www.joe-shirey.com/2026/02/23/the-code-is-the-documentation.html). It is a great ongoing approach, but in the early days of a project, clean code usually loses the battle against moving fast. We skip the hygiene, we ignore the .gitignore, and we tell ourselves we will write the tests later.
+Recently, I wrote about why [the code is the documentation](https://www.joe-shirey.com/2026/02/18/the-code-is-the-documentation.html). It is a great ongoing approach, but in the early days of a project, clean code usually loses the battle against moving fast. We skip the hygiene, we ignore the .gitignore, and we tell ourselves we will write the tests later.
 
 I have started using a new approach to fix this. It is not a rigid set of Bash scripts that break the moment you pivot, and it is not a black box AI that writes code for me.
 
