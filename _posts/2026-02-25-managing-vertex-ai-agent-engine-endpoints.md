@@ -33,7 +33,7 @@ This repo leverages GitHub Environments to provide clear separation between **DE
 
 ### The Production Mapping
 
-In this example, the`main` branch is treated as the source of truth for your stable environment. Whenever a push or PR merge occurs on `main`, the pipeline targets the PROD environment and an endpoint explicitly named **Production**.
+In this example, the `main` branch is treated as the source of truth for your stable environment. Whenever a push or PR merge occurs on `main`, the pipeline targets the PROD environment and an endpoint explicitly named **Production**.
 
 * **[Production Deployment Workflow](https://github.com/joeshirey/AgentEngineCICD/blob/main/.github/workflows/deploy.yml)**
 
