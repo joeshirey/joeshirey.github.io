@@ -13,12 +13,16 @@ I have started using a new approach to fix this. It is not a rigid set of Bash s
 
 Instead, it is a **Commit** workflow. This is a series of agentic tasks I have open-sourced in the [AgenticCodingHelperTemplates](https://github.com/joeshirey/AgenticCodingHelperTemplates) repo.
 
+---
+
 ## The Tooling: Gemini-CLI and Antigravity
 
 I generally use two specific tools as the backbone of my development process and have built helpers for both scenarios because they serve different needs in my work.
 
 * **[gemini-cli](https://github.com/google-gemini/gemini-cli)**: This is my go-to for atomic, terminal-based tasks. I have built a suite of [slash commands](https://github.com/joeshirey/AgenticCodingHelperTemplates/tree/main/gemini-cli) that allow me to trigger specific hygiene checks instantly without leaving the command line. It is fast, lightweight, and works well for just-in-time engineering.
 * **[antigravity](https://www.google.com/search?q=https://github.com/pro-fullstack/antigravity)**: When a task requires more than a quick check, I move to [antigravity workflows](https://github.com/joeshirey/AgenticCodingHelperTemplates/tree/main/antigravity). It allows me to orchestrate complex, multi-step sequences. This turns a series of prompts into a professional pipeline that keeps my project lifecycle on track.
+
+---
 
 ## The Anatomy of the Commit Sequence
 
@@ -32,6 +36,8 @@ In this approach, the "commit-major" workflow acts as an orchestrator. It chains
 - **Commit Changes (`commit-changes`)**: A standardized process for reviewing `git diff`, drafting a commit message, seeking user approval, and pushing the code.
 - **Commit Major (`commit-major`)**: A rigorous macro-workflow composed of multiple other steps. It sequentially runs: `check-git-hygiene` -> `update-docs` -> `update-comments` -> `run-linting` -> `run-unit-tests` -> `commit-changes`. If any step modifies files (e.g., unit tests or linting changes), the process restarts.
 
+---
+
 ## Human-in-the-Loop
 
 The most important part of this workflow is that the agent does not have the commit bit.
@@ -39,6 +45,8 @@ The most important part of this workflow is that the agent does not have the com
 Each step is designed to provide feedback to the human developer. The agent acts as a highly disciplined peer reviewer. It flags the PII, suggests the doc update, and recommends how to fix failing tests.
 
 I make the final call. I review the suggestions, fix the issues, and then commit. This keeps me in control while the AI handles the cognitive load of the chores.
+
+---
 
 ## Make It Yours
 

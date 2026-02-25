@@ -13,6 +13,8 @@ We’ve all been there. You jump into a repo and the `/docs` folder is a ghost t
 
 Even if you’re skeptical about agentic coding - the idea of an AI autonomously making logic changes to your codebase - there is a massive middle ground: using AI to kill the friction of documentation. You aren't giving an AI free reign over your code; you're just making it handle the descriptive overhead that humans usually skip.
 
+---
+
 ## THE HUMAN SIDE OF TECHNICAL DOCS
 
 We don't just write docs to satisfy a linter. Accurate, living documentation is the bridge between the black box of the code and the humans surrounding it:
@@ -20,6 +22,8 @@ We don't just write docs to satisfy a linter. Accurate, living documentation is 
 *   **Onboarding**: It’s the difference between a new engineer shipping on day two or spending a week just poking around.
 *   **Non-Technical Stakeholders**: Clear docs allow PMs, designers, and Ops to understand the what and where without needing to shoulder-tap you every twenty minutes.
 *   **Code Validation**: Sometimes, seeing the AI describe your code back to you is the best way to realize, "Wait, that’s not actually what I intended that function to do." It’s a review session that writes itself.
+
+---
 
 ## THE SETUP: GEMINI CLI & ANTIGRAVITY
 
@@ -40,6 +44,8 @@ When I’m in the flow, I use Antigravity’s [workflows](https://antigravity.go
 
 I use this [`/update-docs`](https://github.com/joeshirey/AgenticCodingHelperTemplates/blob/main/antigravity/global_workflows/update-docs.md) workflow as an example to keep my docs reconciled with my code.
 
+---
+
 ## TAILORING TO YOUR STANDARDS
 
 The best part of this approach is its flexibility. While I have my own preferences for what a project needs, you can tailor these tools to any documentation standard. For example, my workflows often handle:
@@ -49,11 +55,15 @@ The best part of this approach is its flexibility. While I have my own preferenc
 
 Because these templates are customizable, you can also include things like `DEPLOYMENT.md` or even Mermaid diagrams. Letting the AI read the code and draw the diagram keeps your architecture visuals from becoming obsolete.
 
+---
+
 ## SET IT AND FORGET IT: AUTOMATED WORKFLOWS
 
 If you want to reach "Doc Nirvana," don't even make running the command a manual step. You can integrate these CLI commands directly into your automation pipelines.
 
 Whether you trigger the update as part of a local commit script or as a step in your CI/CD pipeline, the goal is the same: your documentation should be updated automatically every time the code changes. This ensures that the documentation is never an afterthought, it’s a byproduct of the commit itself.
+
+---
 
 ## ELIMINATING THE TOIL
 
