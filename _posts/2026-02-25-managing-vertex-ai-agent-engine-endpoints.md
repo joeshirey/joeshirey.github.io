@@ -78,4 +78,4 @@ For teams that need a fast, transparent, and direct path to managing Vertex AI A
 
 ---
 
-Note: thank you to [Anjum Sayed](https://www.linkedin.com/in/anjum-sayed/) for the collaboration on developing this approach and example.
+Note: Thank you to [Anjum Sayed](https://www.linkedin.com/in/anjum-sayed/) for the partnership and collaboration in the development of this approach and example.
