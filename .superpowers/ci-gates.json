@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "discovered_at": "2026-05-14T22:18:54Z",
+  "source_hashes": {
+    ".github/workflows/deploy-jekyll.yml": "sha256:2794f31cfb79d0ae139c2cc107b7fac2958c025f2077d114cf8baf7d65513abc"
+  },
+  "gates": [
+    {
+      "name": "bundle exec jekyll build",
+      "command": "bundle exec jekyll build",
+      "auto_fix": null,
+      "type": "build",
+      "source": "ci",
+      "skip_local": false
+    }
+  ]
+}
