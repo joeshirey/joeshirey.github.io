@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Part 6: The Autonomy Ladder"
-date: 2026-06-02 18:00:00 -0700
+date: 2026-06-02 12:00:00 -0700
 excerpt: "Every external action runs through an autonomy gate with three settings -- gated, push-draft, and full -- so the coordinator does as much as I trust it to and no more."
 tags: ["hermes-agent", "ai-agents", "automation"]
 ---
