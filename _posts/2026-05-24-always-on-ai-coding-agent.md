@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "I Built an Always-On AI Coding Agent That Plans, Codes, and Reviews Its Own Work"
+title: "Part 1: I Built an Always-On AI Coding Agent That Plans, Codes, and Reviews Its Own Work"
 date: 2026-05-24
 excerpt: "I took a 2019 MacBook Pro that was collecting dust and turned it into an autonomous coding coordinator. It plans before it codes, delegates to a separate AI for implementation, and reviews every line before calling the work done."
-tags: ["hermes-agent", "claude-code", "ai-agents", "automation"]
+tags: ["hermes-agent", "ai-agents", "automation"]
 ---
 
 ![Always-On AI Coding Agent](/assets/images/always-on-ai-coding-agent-hero.jpeg)
@@ -198,8 +198,21 @@ If you want to build this yourself, I've written a detailed technical reference 
 
 These instructions should also work on WSL2, in a Docker container, or on Linux, though I haven't tested those environments. I'm using an old Mac that has nothing important on it beyond what gets backed up nightly to GitHub, so I'm not worried about Hermes or Claude breaking anything I can't fix. I'd be more careful on my main computer.
 
-The full step-by-step guide is available in the companion document: **[AI Coding Agent: Technical Reference Guide](https://github.com/joeshirey/HelperUtilities/blob/main/HermesCoderAgentSetupGuide/building-an-ai-coding-agent-server.md)**. You could follow it step by step, or you could point a tool like Claude Code or Gemini CLI at it and have it build this interactively with you.
+The full implementation details are in the companion repo: **[HermesCoderAgent](https://github.com/joeshirey/HermesCoderAgent)**. You could follow it step by step, or you could point a tool like Claude Code or Gemini CLI at it and have it build this interactively with you.
 
 ---
 
 *This setup uses [Hermes Agent](https://github.com/NousResearch/hermes-agent) by Nous Research, [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview) by Anthropic, and [hermes-webui](https://github.com/nesquena/hermes-webui) by nesquena. The seven-role model is inspired by [Squad](https://github.com/bradygaster/squad). The workflow skills are inspired by [Superpowers](https://github.com/obra/superpowers) by obra. Both Squad and Superpowers are worth checking out.*
+
+---
+
+### The Hermes Agent series
+
+1. **Part 1: I Built an Always-On AI Coding Agent That Plans, Codes, and Reviews Its Own Work** (this post)
+2. [Part 2: One Coordinator, Swappable Coding Engines](/2026/06/01/swappable-coding-engines.html)
+3. [Part 3: Dynamic Tool Discovery and Injection](/2026/06/02/dynamic-tool-discovery.html)
+4. [Part 4: Running Untrusted Tools Safely](/2026/06/02/running-untrusted-tools-safely.html)
+5. [Part 5: GitHub Issues as the Agent's Backlog](/2026/06/02/using-github-issues-as-backlog.html)
+6. [Part 6: The Autonomy Ladder](/2026/06/02/the-autonomy-ladder.html)
+
+[Implementation details and source](https://github.com/joeshirey/HermesCoderAgent)
