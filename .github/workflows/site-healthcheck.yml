@@ -1,0 +1,78 @@
+name: Site healthcheck
+
+on:
+  schedule:
+    - cron: "37 8 * * *"   # nightly at 08:37 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: read
+  issues: write
+
+concurrency:
+  group: "site-healthcheck"
+  cancel-in-progress: false
+
+jobs:
+  healthcheck:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SITE_URL: "https://www.joe-shirey.com/"
+    steps:
+      - name: Run checks
+        run: |
+          problems=""
+
+          # 1. Pages must be served by the Actions build, not the legacy branch build.
+          #    Legacy/safe mode silently drops jekyll-paginate-v2 et al. and yields an empty homepage.
+          build_type=$(gh api "repos/${{ github.repository }}/pages" -q '.build_type' 2>/dev/null || echo "unknown")
+          echo "Pages build_type: $build_type"
+          if [ "$build_type" != "workflow" ]; then
+            problems="${problems}- Pages build_type is \`${build_type}\` (expected \`workflow\`). Fix: \`gh api -X PUT repos/${{ github.repository }}/pages -f build_type=workflow\` then redeploy.\n"
+          fi
+
+          # 2. The live homepage must actually render the post list.
+          html=$(curl -fsSL "$SITE_URL" || echo "")
+          count=$(printf '%s' "$html" | grep -c 'class="post-entry"' || true)
+          echo "Homepage post-entry count: $count"
+          if [ "$count" -lt 1 ]; then
+            problems="${problems}- Live homepage (${SITE_URL}) rendered 0 posts — the post list is empty.\n"
+          fi
+
+          if [ -n "$problems" ]; then
+            printf "%b" "$problems" > problems.txt
+            echo "::error::Site healthcheck FAILED"
+            cat problems.txt
+            exit 1
+          fi
+          echo "Site healthcheck passed."
+
+      - name: Open or update issue on failure
+        if: failure()
+        run: |
+          title="Site healthcheck failed"
+          run_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+          body="The nightly site healthcheck failed.\n\n**Problems:**\n"
+          if [ -f problems.txt ]; then
+            body="${body}$(cat problems.txt)"
+          else
+            body="${body}- The job errored before recording specifics; see the run below.\n"
+          fi
+          body="${body}\nRun: ${run_url}"
+
+          # Make sure the label exists (idempotent).
+          gh label create site-healthcheck \
+            --color B60205 \
+            --description "Automated site healthcheck failures" \
+            --force >/dev/null 2>&1 || true
+
+          existing=$(gh issue list --state open --label site-healthcheck --json number -q '.[0].number' 2>/dev/null || echo "")
+          if [ -n "$existing" ]; then
+            printf "%b" "$body" | gh issue comment "$existing" --body-file -
+            echo "Commented on existing issue #$existing"
+          else
+            printf "%b" "$body" | gh issue create --title "$title" --label site-healthcheck --body-file -
+          fi
