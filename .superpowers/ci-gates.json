@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "discovered_at": "2026-05-14T22:18:54Z",
+  "discovered_at": "2026-06-10T19:20:00Z",
   "source_hashes": {
-    ".github/workflows/deploy-jekyll.yml": "sha256:2794f31cfb79d0ae139c2cc107b7fac2958c025f2077d114cf8baf7d65513abc"
+    ".github/workflows/deploy-jekyll.yml": "sha256:197211b2d3a052e76bc60e6f6281f152456e8c55fa9955535016760697d6b038"
   },
   "gates": [
     {
@@ -10,6 +10,14 @@
       "command": "bundle exec jekyll build",
       "auto_fix": null,
       "type": "build",
+      "source": "ci",
+      "skip_local": false
+    },
+    {
+      "name": "homepage smoke test",
+      "command": "test \"$(grep -c 'class=\"post-entry\"' _site/index.html)\" -ge 1",
+      "auto_fix": null,
+      "type": "test",
       "source": "ci",
       "skip_local": false
     }
