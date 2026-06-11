@@ -121,7 +121,7 @@ A one-time cleanup decays unless something maintains it. Three mechanisms now ho
 
 **The leak gate.** The snapshot publisher's scrub gate now includes my private project identifiers alongside the secrets patterns. Any hit anywhere in the publishable tree aborts the publish entirely. I tested it by planting a database name in a skill and watching the publish refuse to run. Defense in depth: hygiene keeps the names out, and if hygiene ever slips, the gate means the failure mode is "tonight's snapshot didn't publish," not "my project details are public."
 
-## Trade-offs, honestly
+## There are some trade-offs
 
 Almost every moving part here is an LLM judgment call, and LLM judgment calls vary. Some of the sweep's merges will be blander than the episodes they replace; the archive is the hedge, not a guarantee. The clustering threshold took tuning; my first cut was too strict and clustered nothing, because real lessons share fewer keywords than you'd guess. The memory classifier's question, "is this entry about one project or about all of them?", is usually obvious and occasionally not, and a wrong relocation moves a useful general fact somewhere only one project sees it. And all of it runs unattended, which means a bad judgment propagates until I notice it in the digest.
 
