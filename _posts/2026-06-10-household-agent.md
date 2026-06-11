@@ -3,7 +3,7 @@ layout: post
 title: "From Coding Agent to Chief of Staff"
 date: 2026-06-10 12:00:00 -0700
 excerpt: "I'd been using Hermes to write code. Then I pointed it at my house: one always-on agent for mail, meals, trips, and bills -- and the guardrails that let us trust it."
-tags: ["hermes-agent", "ai-agents", "automation", "home"]
+tags: ["hermes-agent", "ai-agents", "automation"]
 ---
 
 ![From Coding Agent to Chief of Staff](/assets/images/household-agent-hero.jpeg)
@@ -130,5 +130,3 @@ None of these are impressive on their own. The point is the *aggregate*: a hundr
 ## The takeaway
 
 If you're building on any agent framework, the lesson generalizes past my house. The capabilities are the easy, fun part; you'll have them working faster than you expect. The trust layer is the actual engineering, and it's the part worth getting right: gate what the agent can do, make everything it does visible, and assume the scariest failure is the silent one.
-
-The hard problem was never getting the agent to act. It was knowing what it did.
