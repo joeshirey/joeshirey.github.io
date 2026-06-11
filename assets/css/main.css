@@ -309,6 +309,36 @@ header nav {
     margin: 2rem 0;
 }
 
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.75rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.post-content th,
+.post-content td {
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 0.9rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.post-content th {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    background-color: var(--border-color);
+}
+
+.post-content tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="dark"] .post-content tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
 footer {
     padding: 3rem 0;
     margin-top: 4rem;
