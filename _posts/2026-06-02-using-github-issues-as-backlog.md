@@ -122,5 +122,6 @@ The [next post](/2026/06/02/the-autonomy-ladder.html) is about the autonomy ladd
 4. [Part 4: Running Untrusted Tools Safely](/2026/06/02/running-untrusted-tools-safely.html)
 5. **Part 5: GitHub Issues as the Agent's Backlog** (this post)
 6. [Part 6: The Autonomy Ladder](/2026/06/02/the-autonomy-ladder.html)
+7. [Part 7: How the Agent Learns From Its Mistakes](/2026/06/10/how-the-agent-learns-from-its-mistakes.html)
 
 [Implementation details and source](https://github.com/joeshirey/HermesCoderAgent)
