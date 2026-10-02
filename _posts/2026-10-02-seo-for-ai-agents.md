@@ -126,4 +126,6 @@ For vendors, the takeaway is that the recommendation mostly comes from what the 
 
 For developers, there are two takeaways. First, if you want an agent's recommendation to reflect current docs and pricing, ask it to search. By default it may not. Second, whoever controls the search tool has some influence over the answer, and the agent never noticed that every query it sent had been rewritten. If you plug a third-party search tool into your agent, you're trusting it with more than you might think.
 
+One more point that I want to make sure I make. SEO is a good thing for the long term and likely helps shape the training data (I'm not involved in training frontier models so I am assuming this). I would still focus on SEO - with agent friendly content - so the next training runs have the opportunity to incorporate that content into its corpus. But note that SEO is not going to move the needle on model recommendations in the short term.
+
 Which brings me back to the NAS. The shortlist I got was most likely shaped by what the model learned in training, not by anything a vendor published last week, unless I asked it to go look. That's useful to know the next time I take an agent's advice at face value.
