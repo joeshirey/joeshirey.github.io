@@ -339,6 +339,54 @@ header nav {
     background-color: rgba(255, 255, 255, 0.04);
 }
 
+/* Example prompt cards: a blockquote tagged with {: .prompt-card} */
+.post-content .prompt-card {
+    position: relative;
+    margin: 0 0 1.5rem;
+    padding: 2.5rem 1.5rem 1.25rem;
+    background-color: rgba(59, 130, 246, 0.06);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+[data-theme="dark"] .post-content .prompt-card {
+    background-color: rgba(96, 165, 250, 0.08);
+}
+
+.post-content .prompt-card::before {
+    content: "Example prompt";
+    position: absolute;
+    top: 0.9rem;
+    left: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.post-content .prompt-card p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.post-content .prompt-card p.prompt-target {
+    margin-bottom: 0;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-style: normal;
+    color: var(--text-secondary);
+}
+
+.post-content .prompt-card p.prompt-target strong {
+    color: var(--text-primary);
+}
+
 footer {
     padding: 3rem 0;
     margin-top: 4rem;
